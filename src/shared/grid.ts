@@ -47,6 +47,71 @@ class Grid {
         return;
     }
 
+    checkWin(connectN: any, row: any, col: any, piece: any) {
 
+        let count = 0;
+
+        // Check horizontal
+        for (let c = 0; c < this.columns; c++) {
+            if (this.grid[row][c] == piece) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == connectN) {
+                return true;
+            }
+        }
+
+        // Check vertical
+        count = 0;
+
+        for (let r = 0; r < this.rows; r++) {
+            if (this.grid[r][col] == piece) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == connectN) {
+                return true;
+            }
+        }
+
+        // Check diagonal
+        count = 0;
+
+        for (let r = 0; r < this.rows; r++) {
+            let c = row + col - r;
+
+            if (c >= 0 && c < this.columns && this.grid[r][c] == piece) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == connectN) {
+                return true;
+            }
+        }
+
+        count = 0;
+        for (let r = 0; r < this.rows; r++) {
+            let c = col - row + r;
+            if (c >= 0 && c < this.columns && this.grid[r][c] == piece) {
+                count++;
+            } else {
+                count = 0;
+            }
+
+            if (count == connectN) {
+                return true;
+            }
+        }
+
+        return;
+
+    }
 
 }
