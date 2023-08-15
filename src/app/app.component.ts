@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'connect-four';
+
+  ngOnInit() {
+    'Lorenzo here'
+  }
 }
