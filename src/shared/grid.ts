@@ -96,6 +96,7 @@ class Grid {
             }
         }
 
+        //  Check anti-diagonal
         count = 0;
         for (let r = 0; r < this.rows; r++) {
             let c = col - row + r;
